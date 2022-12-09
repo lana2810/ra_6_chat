@@ -1,38 +1,109 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  padding: 0 0px;
+  box-sizing: border-box;
+  background-color: #abde96;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  height: calc(100vh - 45px);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: flex-end;
+}
+.chat-wrapper {
+  overflow-y: auto;
+}
+.chat {
+  display: flex;
+  flex-direction: column;
+}
+.div-input {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: 1px solid grey;
+  font-size: 1.2rem;
+  padding: 5px;
+  height: 35px;
+  background-color: #fff;
+}
+.message {
+  margin: 5px 5px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 5px;
+  width: fit-content;
+  max-width: 60%;
 }
 
-.App-link {
-  color: #61dafb;
+.input-message {
+  box-sizing: border-box;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  text-align: left;
 }
-
-@keyframes App-logo-spin {
+.icon {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  font-size: 1.5rem;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  border: 1px solid gray;
+  border-radius: 50%;
+  color: green;
+}
+.icon:hover {
+  cursor: pointer;
+}
+.move-color-high {
+  animation-name: move-color-high;
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+.move-color-medium {
+  animation-name: move-color-medium;
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+.move-color-low {
+  animation-name: move-color-low;
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+@keyframes move-color-high {
   from {
-    transform: rotate(0deg);
+    color: #86bb71;
   }
   to {
-    transform: rotate(360deg);
+    color: #abde96;
   }
+}
+@keyframes move-color-medium {
+  from {
+    color: #abde96;
+  }
+  to {
+    color: #d2efc7;
+  }
+}
+@keyframes move-color-low {
+  from {
+    color: #d2efc7;
+  }
+  to {
+    color: #e7f6e1;
+  }
+}
+.fa-circle {
+  font-size: 8px;
 }
